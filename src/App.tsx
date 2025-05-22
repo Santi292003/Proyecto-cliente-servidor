@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react';
+// import { useState } from 'react'
+import StickyHeadTable from './components/StickyHeadTable';
+import { Box, Typography } from '@mui/material';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [emails, setEmails] = useState({"mails":[{"from":"Maria José Medina Ruiz","date":"2025-05-20","subject":"Prueba de correo","summary":"Hola, mi nombre es Maria José, estoy probando este contacto"}]});
+
+  // const fetchEmails = async () => {
+  //   try {
+  //     const response = await fetch('https://tu-n8n/webhook/emails');
+  //     const data = await response.json();
+  //     setEmails(data);
+  //   } catch (error) {
+  //     console.error('Error al obtener correos:', error);
+  //   }
+  // };
+
+  useEffect(() => {
+    setEmails({
+    "mails":
+    [
+      {"from":"Maria José Medina Ruiz","date":"2025-05-20","subject":"Prueba de correo","summary":"Hola, mi nombre es Maria José, estoy probando este contacto"},
+      {"from":"Maria José Medina Ruiz","date":"2025-05-21","subject":"Prueba de correo2","summary":"Hola, podrias darme información sobre esta página?"},
+      {"from":"Maria José Medina Ruiz","date":"2025-05-20","subject":"Prueba de correo3","summary":"Hola, solicito documentos"}
+    ]});
+    // fetchEmails();
+
+    // const interval = setInterval(fetchEmails, 30000);
+    // return () => clearInterval(interval);
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: 4,
+      }}
+    >
+      <Typography
+          variant="h3"
+          component="h1"
+          gutterBottom
+          sx={{
+            fontFamily: "'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+          }}
+        >
+        MANEJADOR DE MAILS
+      </Typography>
+      <StickyHeadTable rows={emails.mails} />
+    </Box>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,66 @@
+.paper {
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.table-container {
+  max-height: 460px;
+}
+
+.table {
+  min-width: 700px;
+}
+
+.table-header-cell {
+  background-color: #91d7ea !important; /* forzar el color */
+  color: #151515 !important;
+  font-weight: bold;
+  font-size: 1.05rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.table-row {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.table-row:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.table-cell {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  backdrop-filter: blur(2px);
+}
+
+.pagination {
+  background-color: rgba(224, 227, 234, 0.626);
+  color: #151515 !important;
+}
+
+/* Cambia el color del texto que muestra el rango de filas y el label del selector */
+.pagination .MuiTablePagination-selectLabel,
+.pagination .MuiTablePagination-displayedRows {
+  color: #151515 !important;
+}
+
+/* Cambia el color del icono del selector de páginas */
+.pagination .MuiSelect-icon {
+  color: #151515 !important;
+}
+
+/* Cambia el texto dentro del selector de cantidad de filas */
+.pagination .MuiInputBase-root {
+  color: #151515 !important;
+}
+
+/* Cambia el color de los botones de navegación (flechas) */
+.pagination .MuiTablePagination-actions button {
+  color: #151515 !important;
+}

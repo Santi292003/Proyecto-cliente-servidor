@@ -5,7 +5,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Fondo más vivo, un azul oscuro vibrante */
+  background-color: #0d1b2a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,14 +26,33 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #0d1b2a; /* el nuevo fondo */
+  color: rgba(255, 255, 255, 0.87);
+}
+
+#root {
+  width: 100%;
+  max-width: 1000px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem; /* más padding arriba para separar título */
+  box-sizing: border-box;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.6em;
   line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #61dafb;
+  text-shadow:
+    1px 1px 4px rgba(97, 218, 251, 0.5),
+    0 0 5px rgba(97, 218, 251, 0.7);
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.05em;
 }
 
 button {
